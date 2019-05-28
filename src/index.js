@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import '../node_modules/react-vis/dist/style.css'
+import { Button, Wrapper } from './index.styles'
 import Line from './Line'
 import Bar from './Bar'
 import Pie from './Pie'
-
-import './index.css'
 
 const App = () => {
   const generateData = (value, length = 5) => {
@@ -28,14 +27,14 @@ const App = () => {
   }
 
   return (
-    <div className='App'>
+    <Wrapper className='App'>
       <div>
-        <button onClick={changeData}>Transform</button>
+        <Button onClick={changeData}>Transform</Button>
       </div>
       <Line height={300} width={300} data={data} />
       <Bar height={300} width={300} data={data} />
       <Pie height={300} width={300} data={data} />
-    </div>
+    </Wrapper>
   )
 }
 
